@@ -37,6 +37,7 @@ public class LoginForm extends JFrame {
         // Panel
         JPanel formPanel=new JPanel();
         formPanel.setLayout(new GridLayout(0, 1, 10, 10));
+        formPanel.setBorder(BorderFactory.createEmptyBorder(30, 50, 30, 50));
         formPanel.add(lbLoginForm);
         formPanel.add(lbEmail);
         formPanel.add(tfEmail);
@@ -79,6 +80,7 @@ public class LoginForm extends JFrame {
 
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new GridLayout(1,2,10,0));
+        buttonPanel.setBorder(BorderFactory.createEmptyBorder(30, 50, 30, 50));
         buttonPanel.add(btnLogin);
         buttonPanel.add(btnCancel);
 
