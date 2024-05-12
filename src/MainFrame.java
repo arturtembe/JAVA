@@ -18,6 +18,11 @@ public class MainFrame extends JFrame{
         infoPanel.add(new JLabel("Address"));
         infoPanel.add(new JLabel(user.address));
 
+        Component[] labels = infoPanel.getComponents();
+        for(int i = 0; i < labels.length; i++){
+            labels[i].setFont(new Font("Segoe print", Font.BOLD, 18));
+        }
+
         /* =============== PAINEL ============ */
         add(infoPanel, BorderLayout.NORTH);
 

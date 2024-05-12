@@ -1,5 +1,5 @@
-import javax.management.StringValueExp;
 import javax.swing.*;
+import com.formdev.flatlaf.FlatDarculaLaf;
 import java.awt.*;
 import java.awt.event.*;
 import java.sql.*;
@@ -102,7 +102,7 @@ public class LoginForm extends JFrame {
     private User getAuthenticatedUser(String email, String password){
         User user = null;
 
-        final String DB_URL = "jbdc:mysql://localhost/java_mystore?serverTimezone=UTC";//java_mystore
+        final String DB_URL = "jdbc:mysql://localhost:3306/java_mystore";//java_mystore
         final String USERNAME = "root";
         final String PASSWORD = "root";
 
@@ -131,7 +131,7 @@ public class LoginForm extends JFrame {
 
         } catch (Exception e) {
             // TODO: handle exception
-            System.out.println("Database connextion Failed!");
+            System.out.println("Database connextion Failed! "+e.getMessage());
         }
 
         return user;
@@ -139,6 +139,14 @@ public class LoginForm extends JFrame {
 
     /* =============== RUN JAVA JFRAME ============ */
         public static void main(String[] args) {
+
+            try {
+                UIManager.setLookAndFeel(new FlatDarculaLaf());
+            } catch (Exception e) {
+                // TODO: handle exception
+                System.err.println("Failed to initialize LaF");
+            }
+
             LoginForm loginForm = new LoginForm();
             loginForm.initialize();
         }
