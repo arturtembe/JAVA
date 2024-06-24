@@ -1,5 +1,4 @@
 import javax.swing.*;
-import com.formdev.flatlaf.FlatDarculaLaf;
 import java.awt.*;
 import java.awt.event.*;
 import java.sql.*;
@@ -137,17 +136,4 @@ public class LoginForm extends JFrame {
         return user;
     }
 
-    /* =============== RUN JAVA JFRAME ============ */
-        public static void main(String[] args) {
-
-            try {
-                UIManager.setLookAndFeel(new FlatDarculaLaf());
-            } catch (Exception e) {
-                // TODO: handle exception
-                System.err.println("Failed to initialize LaF");
-            }
-
-            LoginForm loginForm = new LoginForm();
-            loginForm.initialize();
-        }
 }
